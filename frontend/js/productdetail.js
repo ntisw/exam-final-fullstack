@@ -10,7 +10,7 @@ $(function () {
     function getData() {
         // #14 Get a selected product and display as a form
         // use $.get
-        $.get(`http://localhost:8080/api/products/pid`, function (data, status) {
+        $.get(url, function (data, status) {
             console.log(status);
             if (status === 'success') {
                 console.log("retreive data by id : ", data);
