@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Product = require('./models/productSchema')
 // #5 Change URL to your local mongodb
-const url = "";
+const url = "mongodb://localhost:27017/products";
 // ===============================
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
@@ -33,7 +33,9 @@ function updateProductById(req, res) {
     var payload = req.body
     var pid = req.params.pid;    
     // #7 Update a product by ID (findByIdAndUpdate)
-
+    var id = {"id":pid}
+    var data = new Product(payload);
+    Product.findByIdAndUpdate(id, data);
     // ===============================
 }
 
@@ -47,7 +49,8 @@ function deleteProductById(req, res) {
 function addProduct(req, res) {
     var payload = req.body
     // #9 Add a new product 
-
+    product = new Product(payload);
+    product.save();
     // ===============================
 }
 
