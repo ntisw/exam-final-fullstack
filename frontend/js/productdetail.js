@@ -10,7 +10,23 @@ $(function () {
     function getData() {
         // #14 Get a selected product and display as a form
         // use $.get
-
+        $.get(`http://localhost:8080/api/products/pid`, function (data, status) {
+            console.log(status);
+            if (status === 'success') {
+                console.log("retreive data by id : ", data);
+                var serialno = data.serialno;
+                var name = data.name;
+                var category = data.category;
+                var price = data.price;
+                var photo = data.photo;
+                $("#serialno").val(serialno);
+                $("#name").val(name);
+                $("#category").val(category);
+                $("#price").val(price);
+                $("#photo").val(photo);
+                $("#preview").attr("src", $("#photo").val());
+            }
+        });
         // ===============================
     }
 

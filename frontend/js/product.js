@@ -15,10 +15,10 @@ $(function () {
                 console.log(data);
                 data.forEach(element => {
                     var serialno = element.serialno;  
-                    var name = element.name,
+                    var name = element.name;
                     var category = element.category;
                     var price = element.price;
-                    var photo = photo;
+                    var photo = element.photo;
                     var item = `<tr>
                     <td><img src="${photo}" height="30px" alt="picture"></td>
                     <td>${serialno}</td>
