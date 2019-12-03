@@ -65,7 +65,14 @@ $(function () {
     $("#confirmdelete").click(function () {
         // #15 Delete a selected product and go back to product list
         // use $.get and winidow.location.href
-
+        $.ajax({
+            url: url,
+            type: 'DELETE',
+            success: function (result) {
+                console.log(result);
+                winidow.location.href = "product.html";
+            }
+        });
         // ===============================
     });
 });
