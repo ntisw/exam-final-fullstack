@@ -14,11 +14,12 @@ $(function () {
             console.log(status);
             if (status === 'success') {
                 console.log("retreive data by id : ", data);
-                var serialno = data.serialno;
-                var name = data.name;
-                var category = data.category;
-                var price = data.price;
-                var photo = data.photo;
+                _data = data[0];
+                var serialno = _data.serialno;
+                var name = _data.name;
+                var category = _data.category;
+                var price = _data.price;
+                var photo = _data.photo;
                 $("#serialno").val(serialno);
                 $("#name").val(name);
                 $("#category").val(category);
