@@ -40,7 +40,7 @@ function updateProductById(req, res) {
 function deleteProductById(req, res) {
     var pid = req.params.pid;    
     // #8 Delete a product by ID (findByIdAndDelete)
-
+    Product.findByIdAndDelete(pid);
     // ===============================
 }
 
