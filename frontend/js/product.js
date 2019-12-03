@@ -25,7 +25,7 @@ $(function () {
                     <td>${name}</td>
                     <td>${category}</td>
                     <td>${price}</td>
-                    <td><a href="productdetail.html?pid=${data.pid}" class="btn btn-primary" >
+                    <td><a href="productdetail.html?pid=${element._id}" class="btn btn-primary" >
                     View detail
                     </a></td>
                     </tr>`;
