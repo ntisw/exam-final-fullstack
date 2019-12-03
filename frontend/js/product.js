@@ -53,7 +53,9 @@ $(function () {
 
         // #13 Add new products by calling api
         // use $.post
-
+        $.post(`http://localhost:8080/api/products`, newproduct, function (result) {
+            console.log(result);
+        });
         // ===============================
 
     });
